@@ -16,8 +16,63 @@ body{
     z-index: 2;
 }
 .logo{
-    height: 45px;
+    height: 40px;
     margin: 5px 10px;
+}
+.words{
+    margin-top: -20px;
+}
+.animated-word h1{
+    font-size: 100px;
+    font-weight: bold;
+    margin-top: 5%;
+    padding: 0 88px;
+}
+.welcome{
+    font-size: 30px;
+    font-weight: bold;
+    height: 90vh;
+    background-size: cover;
+    padding: 0 88px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: -50px;
+}
+.welcome p{
+    font-size: 20px;
+}
+.welcome h4{
+    padding-bottom: 15px;
+}
+.welcome h3{
+    color: purple;
+    font-size: 40px;
+}
+.welcome h2{
+    color: orange;
+    font-size:50px;
+}
+.welcome button{
+    background-image: url("/images/button.png");
+    background-color: transparent;
+    color: purple;
+    font-size: 15px;
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding: 14px 80px 14px 65px;
+    font-weight: 700;
+
+}
+/* ------------------------WELCOME--------------------------- */
+@media only screen and (max-width: 980px){
+    .animated-word h1{
+        font-size: 70px;
+    }
+}
+.animated-word h1{
+    color: orange;
 }
 .form-control{
     margin-top:9px;
@@ -73,6 +128,30 @@ body{
 .bi-cart4{
     margin-right: 5px;
 }
+
+@keyframes wordAnimation {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    25% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    75% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  }
+  .animated-word {
+    animation: wordAnimation 4s ease-in-out;
+    font-size: 24px;
+    color: #333;
+  }
 
 @media only screen and (max-width: 980px)
 {
@@ -170,19 +249,42 @@ body{
 
 /* --------------slider------------------------- */
 .slider{
-    width: 85%;
-    margin-left: 15%;
+    width: 100%;
+    margin-left:0px;
     padding: 0 10px;
 }
 .slider img{
-    width: 85%;
+    width: 100%;
     height:600px;
 }
 .carousel{
     box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
 }
 .carousel-indicators{
     z-index: 1 !important;
+}
+ @keyframes carouselAnimation {
+  0% {
+    transform: translateX(100%);
+  }
+  20% {
+    transform: translateX(0%);
+  }
+  80% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.carousel-item {
+  animation: carouselAnimation 5s infinite;
+} 
+.words{
+    animation: carouselAnimation 5s;
+    font-size: 50px;
 }
 @media only screen and (max-width: 980px)
 {
